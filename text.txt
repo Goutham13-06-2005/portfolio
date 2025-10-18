@@ -1,0 +1,6 @@
+            <a class="btn primary" href="#projects">View Projects</a>
+
+.cert-img { width:100%; height:140px; object-fit:contain; border-radius:6px; background:#fff; }  
+<img src="avatar/GOUTHAM.jpg" alt="Goutham avatar" class="avatar" />          
+rgba(255, 255, 255, 0.03);
+  color: inherit;

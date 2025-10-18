@@ -1,0 +1,646 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --text: #e6eef8;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 12px;
+  --max-width: 1100px;
+  --gap: 1.25rem;
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #071024);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background 400ms ease, color 400ms ease;
+}
+
+a {
+  color: inherit;
+}
+
+/* --- 2. Layout & Container ---
+*/
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #cfe8ff;
+}
+
+
+/* --- 3. Header & Navigation ---
+*/
+.site-header {
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(180deg, rgba(5, 9, 15, 0.6), transparent);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: var(--glass);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+
+/* --- 4. Hero Section ---
+*/
+.hero {
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  width: 220px;
+}
+
+.avatar-wrap {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(14, 165, 233, 0.06));
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+
+/* --- 5. General Components (Typography, Buttons, Cards) ---
+*/
+h1 {
+  font-size: 2rem;
+  margin: 0 0 .5rem;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(90deg, var(--accent), #3b82f6);
+}
+
+.ghost {
+  background: linear-gradient(90deg, var(--accent), #3b82f6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* --- 6. About Section ---
+*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  color: var(--muted);
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.stat {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+
+/* --- 7. Skills Section (Column & Tile Layout) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for skill categories */
+    gap: 1.5rem; /* Increased gap between skill columns */
+    margin-top: 1.5rem; /* Adjusted top margin */
+}
+
+.skill-column {
+    background: var(--card); /* Simpler background */
+    padding: 1.25rem; /* Increased padding */
+    border-radius: var(--radius); /* Using variable for consistency */
+    border: none; /* No border for a cleaner look as in the image */
+    transition: none; /* Remove hover transform for the column itself */
+    cursor: default; /* Default cursor */
+}
+
+.skill-column:hover {
+    transform: none; /* Remove hover effect */
+    box-shadow: none; /* Remove hover effect */
+}
+
+.col-title {
+    margin: 0 0 1rem; /* Adjusted margin */
+    color: var(--accent);
+    font-size: 1.1rem; /* Slightly larger title */
+    font-weight: 700;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 tiles per row within a column */
+    gap: 0.8rem; /* Adjusted gap between tiles */
+}
+
+.tile {
+    width: 100%;
+    aspect-ratio: auto; /* Remove fixed aspect ratio */
+    height: 90px; /* Set a fixed height for tiles */
+    background: var(--glass); /* Use glass for tile background */
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adjusted gap */
+    text-align: center;
+    padding: 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    cursor: default; /* Default cursor */
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+}
+
+.tile:hover {
+    background: rgba(255, 255, 255, 0.05); /* Slightly brighter on hover */
+    transform: translateY(-3px) scale(1.02); /* Subtle lift and scale */
+    box-shadow: 0 6px 15px rgba(2, 6, 23, 0.3); /* Soft shadow */
+    cursor: pointer;
+}
+
+.tile-icon {
+    width: 38px; /* Slightly larger icon */
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+
+.tile-label {
+    font-size: 0.9rem;
+    color: var(--text); /* Changed label color to --text for better contrast */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px; /* Space between icon and text */
+}
+
+/* Responsive adjustments for skills section */
+@media (max-width: 1100px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on medium screens */
+    }
+    .tiles {
+        grid-template-columns: repeat(3, 1fr); /* 3 tiles across within a column */
+    }
+    .tile {
+        height: 80px; /* Slightly smaller height on medium screens */
+        flex-direction: row; /* Icon left, text right on smaller screens */
+        padding: 10px 15px;
+        gap: 15px;
+        text-align: left;
+    }
+    .tile-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .tile-label {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .tiles {
+        grid-template-columns: repeat(2, 1fr); /* 2 tiles across on mobile */
+    }
+    .tile {
+        height: 70px; /* Even smaller height on mobile */
+        flex-direction: column; /* Back to column layout for very small tiles if needed, or keep row if space permits */
+        padding: 8px;
+        gap: 6px;
+        text-align: center;
+    }
+    .tile-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .tile-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* --- 8. Certifications Section ---
+*/
+.certifications {
+  padding: 2rem 0;
+}
+
+.cert-block {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cert-issuer {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.cert-item {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform .16s ease, box-shadow .16s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cert-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+}
+
+.cert-img {
+  display: block;
+  width: 120%;
+  height: 160px;
+  object-fit: contain;
+  transition: transform 220ms cubic-bezier(.2, .9, .2, 1);
+  transform-origin: center center;
+}
+
+.cert-item:hover .cert-img {
+  transform: scale(1.25);
+}
+
+.cert-caption {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+
+/* --- 9. Projects Section ---
+*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  margin: .2rem 0;
+  font-size: 1rem;
+}
+
+.card-desc {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0.4rem 0;
+}
+
+.card-links {
+  margin-top: 0.5rem;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: .6rem;
+}
+
+
+/* --- 10. Contact Form ---
+*/
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: .8rem;
+  border-radius: 8px;
+  border: 1px solid white;
+  background: white;
+  color: inherit;
+  margin-bottom: .6rem;
+}
+
+.form-row {
+  display: flex;
+  gap: .6rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+
+/* --- 11. Footer ---
+*/
+.site-footer {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+}
+
+
+/* --- 12. Animated "Live" Theme ---
+*/
+.theme-live {
+  --bg: none;
+  --card: rgba(255, 255, 255, 0.02);
+  --text: #eaf2ff;
+  --muted: #b8c8e8;
+  overflow-x: hidden;
+}
+
+.theme-live::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: linear-gradient(120deg, #0f1724, #071029, #0b1220, #051231);
+  background-size: 300% 300%;
+  filter: saturate(1.05) contrast(1.02);
+  animation: liveGradient 18s linear infinite;
+}
+
+.theme-live::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 600px 600px, 1200px 1200px;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  animation: starsDrift 60s linear infinite;
+  pointer-events: none;
+}
+
+.theme-live .site-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.55) 65%);
+}
+
+
+/* --- 13. Keyframe Animations ---
+*/
+@keyframes liveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 25%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 75%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes starsDrift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px) scale(1.02);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.45;
+  }
+}
+
+
+/* --- 14. Responsive Design ---
+*/
+/* Medium screens / Tablets */
+@media (max-width: 1100px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cert-img {
+    height: 120px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tile {
+    width: 100%;
+    height: 72px;
+    flex-direction: row;
+    padding: 10px;
+    gap: 12px;
+    aspect-ratio: auto;
+  }
+  .tile-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .tile-label {
+    font-size: 0.95rem;
+    margin-left: 10px;
+    text-align: left;
+  }
+
+  /* Disable hover effects on touch devices */
+  .skill-column:hover,
+  .tile:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Smaller tablets */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .hero-inner {
+    flex-direction: column-reverse;
+  }
+  .nav {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-img {
+    height: 110px;
+  }
+  .tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tile {
+    height: 64px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .theme-live::before,
+  .theme-live::after {
+    animation: none;
+  }
+}
