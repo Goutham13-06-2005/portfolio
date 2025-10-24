@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GOUTHAM S PORTFOLIO</title>
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
+  <link rel="icon" href="logo/portfolio.png" type="image/png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -46,36 +47,42 @@
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I combine solid academic fundamentals with hands-on internships and project experience, 
-              a strong focus on clean code and debugging, and a growth mindset toward cloud, full-stack, 
-              and applied machine learning work. I deliver reliable features, iterate quickly, 
-              and collaborate effectively on team projects.</p>
-            <ul class="about-list">
-              <li><strong>Location:</strong> Vellore, India</li>
-              <li><strong>Interests:</strong> Passionate about cloud computing and full‑stack development, 
-                building portfolio-ready apps for inclusive education, 
-                and mastering cross‑platform mobile and modern UI/UX.</li>
-              <li><strong>Contact:</strong> <a href="mailto:mithulgoutham2004.com">mithulgoutham2004.com</a></li>
-            </ul>
-          </div>
-
-          
-          <div class="about-stats">
-            <div class="stat">
-              <h3>Phone</h3>
-              <p>6369267621</p>
-            </div>
-           
-          </div>  
+<section id="about" class="about-section">
+    <div class="container"> 
+        <h2>About Me</h2>
+        
+        <div class="tab-controls">
+            <button class="tab-button active" onclick="openTab(event, 'Summary')">My Story</button>
+            <button class="tab-button" onclick="openTab(event, 'Focus')">What I Build</button>
+            <button class="tab-button" onclick="openTab(event, 'Facts')">Quick Facts</button>
         </div>
-      </div>
-    </section>
 
+        <div id="Summary" class="tab-content active-content">
+        <p>I combine solid academic fundamentals with hands-on internships and project experience, a strong focus on clean code and debugging, and a growth mindset toward cloud, full-stack, and applied machine learning work.</p>
+        <p>I deliver reliable features, iterate quickly, and collaborate effectively on team projects, ensuring every piece of code is clean, efficient, and user-centered.</p>
+        </div>
+            </div>
+        </div>
+</section>
+
+    <div id="Focus" class="tab-content">
+        <ul>
+            <li>**Cloud Computing:** Passionate about mastering AWS/Azure fundamentals and implementing DevOps practices.</li>
+            <li>**Full-Stack Development:** Driven to build end-to-end features using React, Node.js, and modern database solutions.</li>
+            <li>**Applied ML:** Seeking opportunities to integrate Python-based machine learning models into real-world applications.</li>
+            <li>**UI/UX:** Focused on creating cross-platform mobile and web interfaces with accessibility and user experience in mind.</li>
+        </ul>
+    </div>
+    
+    <div id="Facts" class="tab-content">
+        <ul class="facts-list">
+            <li>**Location:** Vellore, India</li>
+            <li>**Email:** <a href="mailto:mithulgoutham2004@gmail.com">mithulgoutham2004@gmail.com</a></li>
+            <li>**Phone:** <a href="tel:6369267621">6369267621</a> (Make this a clickable link)</li>
+            <li>**Code Focus:** Clean Code, Debugging, Deployment.</li>
+        </ul>
+    </div>
+</section>
     <!-- Add this inside your index.html where the Skills section belongs -->
 
 <section id="skills" class="section skills">
@@ -377,72 +384,108 @@
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid" id="projects-grid">
           <!-- Project card example -->
-          <article class="card">
-            <img src="project image/project 1.png" alt="Project 1" class="card-img" />
-            <div class="card-body">
-              <h3 class="card-title">Personal Portfolio</h3>
-              <p class="card-desc">A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my projects and skills.</p>
-            <div class="social-icons">          
-              <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
-                <img src="logo/github.png" alt="GitHub" width="30" height="30">
-              </a>
-              <a href="https://portfolio-1326.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <img src="logo/chrome.png" alt="Google" width="30" height="30">
-              </a>    
+
+<article class="card">
+    <img src="project image/project 1.png" alt="Project 1" class="card-img" />
+    <div class="card-body">
+      <h3 class="card-title">Personal Portfolio</h3>
+      <p class="card-desc">A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my projects and skills.</p>
+      
+      <div class="project-links">
+        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+          <img src="logo/github.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://portfolio-1326.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="logo/chrome.png" alt="Google" width="30" height="30">
+        </a> 	
+      </div>
+    </div>
+</article>
+
+<article class="card">
+    <img src="project image/project 4.png" alt="Project 4" class="card-img" />
+    <div class="card-body">
+      <h3 class="card-title">Linkify</h3>
+      <p class="card-desc">Built and deployed "Linkify," a web app similar to bit.ly that takes any long URL and generates a unique, short link using a Node.js backend and PostgreSQL database.</p>
+      
+      <div class="project-links"> 
+        <a href="https://github.com/Goutham13-06-2005/linkify-app" target="_blank" rel="noopenernoreferrer">
+          <img src="logo/github.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://linkify-1326.onrender.com/" target="_blank" rel="noopener noreferrer">
+          <img src="logo/chrome.png" alt="Google" width="30" height="30">
+        </a>
+      </div>
+    </div>
+</article>
+
+<article class="card">
+    <img src="project image/project 5.png" alt="Project 5" class="card-img" />
+    <div class="card-body">
+      <h3 class="card-title">Code-Editors</h3>
+      <p class="card-desc">Built a real-time collaborative code editor using React, Node.js, and Socket.IO. Users join rooms via URL and see edits live via WebSockets.</p>
+      
+      <div class="project-links"> 	
+        <a href="https://github.com/Goutham13-06-2005/code-editors" target="_blank" rel="noopenernoreferrer">
+          <img src="logo/github.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://code-editor-fullstack.netlify.app" target="_blank" rel="noopener noreferrer">
+          <img src="logo/chrome.png" alt="Google" width="30" height="30">
+        </a>
+      </div>
+    </div>
+</article>
+
+
+<article class="card">
+    <img src="project image/project 2.png" alt="Project 2" class="card-img" />
+    <div class="card-body">
+      <h3 class="card-title">To-Do-List</h3>
+      <p class="card-desc">An interactive task manager crafted to organize your goals and boost productivity.</p>
+      
+      <div class="project-links"> 	
+        <a href="https://github.com/Goutham13-06-2005/To-Do-List/tree/main/Project" target="_blank" rel="noopenernoreferrer">
+          <img src="logo/github.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://to-do-list-kec.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="logo/chrome.png" alt="Google" width="30" height="30">
+        </a>
+      </div>
+    </div>
+</article>
+
+<article class="card">
+    <img src="project image/project 3.png" alt="Project 2" class="card-img" />
+    <div class="card-body">
+      <h3 class="card-title">Calculator</h3>
+      <p class="card-desc">A responsive web-based calculator built for performing basic arithmetic operations.</p>
+      
+      <div class="project-links">
+        <a href="https://github.com/Goutham13-06-2005/calculator" target="_blank" rel="noopenernoreferrer">
+          <img src="logo/github.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://gd-calculator.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="logo/chrome.png" alt="Google" width="30" height="30">
+        </a>
+      </div> 	
+    </div>
+</article>
+
+
+
+<!--          <article class="card">
+              <img src="path/to/project/image-file.png" alt="Project Image" class="card-img" /> 
+    
+              <div class="card-body">
+                   <h3 class="card-title">Unique Project Title</h3>
+                   <p class="card-desc">Unique Project Description.</p>
+        
+                   <div class="project-links">
+                        <a href="github-link" target="_blank"><img src="logo/github.png" alt="GitHub"></a>
+                        <a href="live-link" target="_blank"><img src="logo/chrome.png" alt="Live Demo"></a>
+                    </div>
               </div>
-            </div>
-          </article>
-
-
-          <article class="card">
-            <img src="project image/project 4.png" alt="Project 4" class="card-img" />
-            <div class="card-body">
-              <h3 class="card-title">Linkify</h3>
-              <p class="card-desc">Built and deployed "Linkify," a web app similar to bit.ly that takes any long URL and generates a unique, short link using a Node.js backend and PostgreSQL database.</p>
-              <div class="social-icons">         
-                <a href="https://github.com/Goutham13-06-2005/linkify-app" target="_blank" rel="noopenernoreferrer">
-                  <img src="logo/github.png" alt="GitHub" width="30" height="30">
-                </a>
-                <a href="https://linkify-1326.onrender.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="logo/chrome.png" alt="Google" width="30" height="30">
-                </a>
-              </div>
-            </div>
-          </article>          
-
-          <article class="card">
-            <img src="project image/project 2.png" alt="Project 2" class="card-img" />
-            <div class="card-body">
-              <h3 class="card-title">To-Do-List</h3>
-              <p class="card-desc">An interactive task manager crafted to organize your goals and boost productivity.</p>
-              <div class="social-icons">         
-                <a href="https://github.com/Goutham13-06-2005/To-Do-List/tree/main/Project" target="_blank" rel="noopenernoreferrer">
-                  <img src="logo/github.png" alt="GitHub" width="30" height="30">
-                </a>
-                <a href="https://to-do-list-kec.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  <img src="logo/chrome.png" alt="Google" width="30" height="30">
-                </a>
-              </div>
-            </div>
-          </article>
-
-
-          <article class="card">
-            <img src="project image/project 3.png" alt="Project 2" class="card-img" />
-            <div class="card-body">
-              <h3 class="card-title">Calculator</h3>
-              <p class="card-desc">A responsive web-based calculator built for performing basic arithmetic operations.</p>
-              <div class="social-icons">         
-                <a href="https://github.com/Goutham13-06-2005/calculator" target="_blank" rel="noopenernoreferrer">
-                  <img src="logo/github.png" alt="GitHub" width="30" height="30">
-                </a>
-                <a href="https://gd-calculator.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  <img src="logo/chrome.png" alt="Google" width="30" height="30">
-                </a>
-              </div>
-            </div>
-            </div>
-          </article>
+          </article>    -->        
 
 
 

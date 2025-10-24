@@ -1,0 +1,60 @@
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I combine solid academic fundamentals with hands-on internships and project experience, 
+              a strong focus on clean code and debugging, and a growth mindset toward cloud, full-stack, 
+              and applied machine learning work. I deliver reliable features, iterate quickly, 
+              and collaborate effectively on team projects.</p>
+            <ul class="about-list">
+              <li><strong>Location:</strong> Vellore, India</li>
+              <li><strong>Interests:</strong> Passionate about cloud computing and full‑stack development, 
+                building portfolio-ready apps for inclusive education, 
+                and mastering cross‑platform mobile and modern UI/UX.</li>
+              <li><strong>Contact:</strong> <a href="mailto:mithulgoutham2004.com">mithulgoutham2004.com</a></li>
+            </ul>
+          </div>
+
+          
+          <div class="about-stats">
+            <div class="stat">
+              <h3>Phone</h3>
+              <p>6369267621</p>
+            </div>
+           
+          </div>  
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  color: var(--muted);
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.stat {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}

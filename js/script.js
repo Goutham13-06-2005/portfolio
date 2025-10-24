@@ -123,3 +123,33 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btn) btn.addEventListener('click', applyLive);
   load();
 });
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // 1. Hide all tab content
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active-content");
+    }
+
+    // 2. Remove the 'active' class from all buttons
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    // 3. Show the current tab and add the 'active' class to the button
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).classList.add("active-content");
+    evt.currentTarget.classList.add("active");
+}
+
+// Ensure the first tab is shown when the page loads
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Check if the tab controls exist, then simulate a click on the first button
+    const firstTabButton = document.querySelector('.tab-button');
+    if (firstTabButton) {
+        firstTabButton.click();
+    }
+});
